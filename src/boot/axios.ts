@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
 
 //https://pokeapi.co/api/v2/pokemon?limit=10&offset=0
 const api = axios.create({ baseURL: 'https://pokeapi.co/api/v2' });
+const todoApi = axios.create({ baseURL: 'http://192.168.31.246:4000' });
 
 export default boot(({ app }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api
@@ -28,6 +29,8 @@ export default boot(({ app }) => {
   app.config.globalProperties.$api = api;
   // ^ ^ ^ this will allow you to use this.$api (for Vue Options API form)
   //       so you can easily perform requests against your app's API
+
+  app.config.globalProperties.$todoApi = todoApi;
 });
 
-export { api };
+export { api, todoApi };

@@ -1,4 +1,6 @@
-export  interface Todo {
-    name: String,
-    timestmap: String,
+export type Todo = Todo2[]
+
+export interface Todo2 {
+  name: string
+  timeStamp: string
 }
